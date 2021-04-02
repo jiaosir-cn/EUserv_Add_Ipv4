@@ -1,6 +1,14 @@
 # EUserv_Add_Ipv4
 
-一键安装
+不限于 EUserv的ipv6主机
+其他OpenVZ架构的主机均可
+
+ 支持ubuntu 18.04 20.04 
+     debian 8 9 10
+     
+     
+  用于ipv6添加ipv4 一键安装
+   
 ```
 wget -qO- https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4/ipv6_add_ipv4 .sh|bash
 ```
@@ -27,6 +35,6 @@ wg
 感谢ViRb3的wgcf项目。
 
 
-## Stargazers over time
+## 随时间增长的stars
 
 [![Stargazers over time](https://starchart.cc/jiaosir-cn/EUserv_Add_Ipv4.svg)](https://starchart.cc/jiaosir-cn/EUserv_Add_Ipv4)
