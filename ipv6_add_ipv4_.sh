@@ -4,7 +4,7 @@ echo -e "更新安装环境"
 apt update && apt install curl lsb-release iptables -y
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 apt update
-apt install net-tools iproute2 openresolv dnsutils -y
+apt install -y net-tools iproute2 openresolv dnsutils
 apt install wireguard-tools --no-install-recommends
 
 
