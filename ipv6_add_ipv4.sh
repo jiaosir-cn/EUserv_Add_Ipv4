@@ -1,23 +1,41 @@
 #!/bin/bash
+//更新安装环境
 apt update && apt install curl sudo lsb-release iptables -y
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 apt update
 apt install net-tools iproute2 openresolv dnsutils -y
-apt install wireguard-tools --no-install-recommends
-wget https://bitbucket.org/ygtsj/euserv-warp/raw/8cccfd4ba639a5fa3a784e1ae37efb30e58310e4/wgcf
-wget https://bitbucket.org/ygtsj/euserv-warp/raw/8cccfd4ba639a5fa3a784e1ae37efb30e58310e4/wireguard-go
-cp wireguard-go /usr/bin
-cp wgcf /usr/local/bin/wgcf
+apt install wireguard-tools --no-install-recommends -y
+
+
+//download wgcf wireguard-go
+wget https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4/wgcf_reg/wgcf_2.2.3_linux_amd64 -O /usr/local/bin/wgcf
+wget https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4/Down_wireguard-go/wireguard-go -O /usr/bin/wireguard-go
+
+
+//添加权限
 chmod +x /usr/local/bin/wgcf
 chmod +x /usr/bin/wireguard-go
-echo | wgcf register
+
+//注册生成wgcf账号，配置文件
+echo|wgcf register
 wgcf generate
+
+//替换配置文件
 sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
+
+//创建文件夹copy文件
+mkdir -p /etc/wireguard
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+
+//设置进程守护 开机启动
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
-rm -f srvDIG9* wgcf* wireguard-go*
-grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
-echo -e "检测是否优先启动Warp IPV4地址：如果下方显示为8.2X……开头的IPV4地址，就说明成功啦！……如果是2a02开头的IPV6地址，那就再重新运行脚本吧"
+
+//删除本地路径多余文件
+rm -f ipv6_add_ipv4* wgcf* wireguard-go*
+
+//设置ipv4优先并测试
+echo 'precedence  ::ffff:0:0/96   100' |  tee -a /etc/gai.conf
+echo -e "显示ipv4地址即成功"
 curl ip.p3terx.com
