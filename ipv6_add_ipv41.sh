@@ -34,7 +34,7 @@ echo -e "创建文件夹copy文件"
 mkdir -p /etc/wireguard
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 
-#关闭启动warp
+#关闭->启动warp
 wg-quick down wgcf
 wg-quick up wgcf
 
