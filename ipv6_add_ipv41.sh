@@ -1,7 +1,7 @@
 #!/bin/bash
 #更新安装环境
 echo -e "更新安装环境"
-apt update && apt install curl sudo lsb-release iptables -y
+apt update && apt install curl lsb-release iptables -y
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 apt update
 apt install net-tools iproute2 openresolv dnsutils -y
@@ -33,6 +33,10 @@ sed -i '/\:\:\/0/d' wgcf-profile.conf
 echo -e "创建文件夹copy文件"
 mkdir -p /etc/wireguard
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+
+#关闭启动warp
+wg-quick down wgcf
+wg-quick up wgcf
 
 #设置进程守护 开机启动
 echo -e "设置进程守护 开机启动"
