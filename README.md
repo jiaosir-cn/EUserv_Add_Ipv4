@@ -24,4 +24,9 @@ wg
 
 
 感谢在网络上写文章并且编译wireguard-go的人。
-感谢ViRb3的wgcf项目
+感谢ViRb3的wgcf项目。
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/jiaosir-cn/EUserv_Add_Ipv4.svg)](https://starchart.cc/jiaosir-cn/EUserv_Add_Ipv4)
