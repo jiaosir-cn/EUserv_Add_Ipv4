@@ -16,6 +16,12 @@
 wget -qO- https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4/ipv6_add_ipv4 .sh|bash
 ```
 
+  用于ipv4添加ipv6 一键安装
+  
+```
+尽请期待
+```
+
 手动开启
 ```
 wg-quick up wgcf
