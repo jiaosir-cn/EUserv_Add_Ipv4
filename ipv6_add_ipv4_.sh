@@ -46,7 +46,7 @@ systemctl start wg-quick@wgcf
 
 #删除本地路径多余文件
 echo -e "删除本地路径多余文件"
-rm -f ipv6_add_ipv4* wgcf* wireguard-go*
+rm -f ipv6_add_ipv4_* wgcf* wireguard-go*
 
 #设置ipv4优先并测试
 echo -e "设置ipv4优先并测试"
