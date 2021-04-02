@@ -36,6 +36,7 @@ cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 
 #关闭->启动warp
 wg-quick down wgcf
+echo -e "启动warp"
 wg-quick up wgcf
 
 #设置进程守护 开机启动
