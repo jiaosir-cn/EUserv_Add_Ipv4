@@ -19,7 +19,7 @@ wget -qO- https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4@main/___ipv6_ad
   用于ipv4添加ipv6 一键安装
   
 ```
-wget -qO- https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4@main/__ipv4_add_ipv6.sh | bash
+wget -qO- https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4@main/___ipv4_add_ipv6.sh | bash
 ```
 
 
