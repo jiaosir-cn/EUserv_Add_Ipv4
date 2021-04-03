@@ -14,7 +14,7 @@ apt install wireguard-tools --no-install-recommends
 #download wgcf wireguard-go
 echo -e "download wgcf wireguard-go"
 wget https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4/wgcf_reg/wgcf_2.2.3_linux_amd64 -O /usr/local/bin/wgcf
-wget https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4@main/down_wireguard-go/wireguard-go -O /usr/bin/wireguard-go
+wget https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4@main/down__wireguard-go/wireguard-go -O /usr/bin/wireguard-go
 
 
 #添加权限
