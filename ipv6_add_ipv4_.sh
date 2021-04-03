@@ -11,6 +11,10 @@ apt-get -y --force-yes install iptables
 
 UCF_FORCE_CONFOLD=1 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y install curl
 
+apt-get install -y -q --no-install-recommends curl
+
+
+
 ///结束
 
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
