@@ -5,6 +5,14 @@ apt update
 apt-get -y --force-yes install curl
 apt-get -y --force-yes install lsb-release
 apt-get -y --force-yes install iptables
+
+
+//等待测试或更新
+
+UCF_FORCE_CONFOLD=1 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y install curl
+
+///结束
+
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 apt update
 apt install -y net-tools iproute2 openresolv dnsutils
