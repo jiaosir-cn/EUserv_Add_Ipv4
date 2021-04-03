@@ -2,24 +2,13 @@
 #更新安装环境
 echo -e "更新安装环境"
 apt update
-apt-get -y --force-yes install curl
-apt-get -y --force-yes install lsb-release
-apt-get -y --force-yes install iptables
-
-
-//等待测试或更新
-
 UCF_FORCE_CONFOLD=1 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y install curl
-apt update && apt install curl sudo lsb-release iptables -y
-
-
-
-///结束
-
+apt install lsb-release iptables -y
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 apt update
 apt install -y net-tools iproute2 openresolv dnsutils
 apt install wireguard-tools --no-install-recommends
+
 
 
 #download wgcf wireguard-go
