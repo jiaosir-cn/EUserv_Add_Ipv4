@@ -1,7 +1,10 @@
 #!/bin/bash
 #更新安装环境
 echo -e "更新安装环境"
-apt update && apt install curl lsb-release iptables --force-yes -y
+apt update
+apt-get -y --force-yes install curl
+apt-get -y --force-yes install lsb-release
+apt-get -y --force-yes install iptables
 echo "deb http://deb.debian.org/debian $(lsb_release -sc)-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 apt update
 apt install -y net-tools iproute2 openresolv dnsutils
