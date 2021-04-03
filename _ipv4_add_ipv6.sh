@@ -29,8 +29,8 @@ wgcf generate
 
 #替换配置文件
 echo -e "替换配置文件"
-sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
-sed -i '/\:\:\/0/d' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.10,8.8.8.8,1.1.1.1/g' wgcf-profile.conf
+sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
 
 #创建文件夹copy文件
 echo -e "创建文件夹copy文件"
