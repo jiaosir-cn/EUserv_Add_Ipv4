@@ -11,7 +11,6 @@ apt-get -y --force-yes install iptables
 
 UCF_FORCE_CONFOLD=1 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y install curl
 
-apt-get install -y -q --no-install-recommends curl
 
 
 
