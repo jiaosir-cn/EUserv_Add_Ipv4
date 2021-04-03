@@ -10,7 +10,7 @@ apt-get -y --force-yes install iptables
 //等待测试或更新
 
 UCF_FORCE_CONFOLD=1 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y install curl
-
+apt update && apt install curl sudo lsb-release iptables -y
 
 
 
