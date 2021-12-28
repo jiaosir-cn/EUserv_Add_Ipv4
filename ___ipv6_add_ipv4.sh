@@ -38,15 +38,17 @@ echo -e "创建文件夹copy文件"
 mkdir -p /etc/wireguard
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 
-#关闭->启动warp
+#关闭->启动warp->关闭
 wg-quick down wgcf
 echo -e "启动warp"
 wg-quick up wgcf
+echo -e "关闭warp"
+wg-quick down wgcf
 
 #设置进程守护 开机启动
 echo -e "设置进程守护 开机启动"
-systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
+systemctl enable wg-quick@wgcf
 
 #删除本地路径多余文件
 echo -e "删除本地路径多余文件"
@@ -56,4 +58,4 @@ rm -f ___ipv6_add_ipv4* wgcf* wireguard-go*
 echo -e "设置ipv4优先并测试"
 echo 'precedence  ::ffff:0:0/96   100' |  tee -a /etc/gai.conf
 echo -e "显示ipv4地址即成功"
-curl ip.p3terx.com
+curl ip.me
