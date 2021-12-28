@@ -13,7 +13,7 @@
   用于ipv6添加ipv4 一键安装
    
 ```
-wget -qO- https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4@main/___ipv6_add_ipv4.sh | bash
+wget -qO- https://cdn.jsdelivr.net/gh/jiaosir-cn/EUserv_Add_Ipv4@main/CDN/___ipv6_add_ipv4.sh | bash
 ```
 -------------------------------------------------------------------------------------------------------
   用于ipv4添加ipv6 一键安装
